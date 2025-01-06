@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {
+  Image,
   SafeAreaView,
   ScrollView,
   StyleSheet,
@@ -8,10 +9,16 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import auth from '@react-native-firebase/auth';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {Colors, fontSize} from '../../utils';
 import {responsiveHeight} from 'react-native-responsive-dimensions';
 import {useNavigation} from '@react-navigation/native';
 import {OtpVerificationScreen} from '../../components';
+
+ GoogleSignin.configure({
+  webClientId: '341941366942-eso5o839990agfqser44fp92phi3d700.apps.googleusercontent.com'
+})
 
 const LoginScreen = () => {
   const navigation = useNavigation<any>();
@@ -69,6 +76,29 @@ const LoginScreen = () => {
     navigation.navigate('signup');
   };
 
+  const googleSignInHandler = async () =>  {
+    // Ensure the device supports Google Play services
+    // await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
+    // Obtain the user's ID token
+    const {idToken}: any = await GoogleSignin.signIn();
+    console.log('Id Token', idToken);
+
+    // Create a Google credential with the token
+    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+    // Link the user's account with the Google credential
+    // const firebaseUserCredential = await auth().currentUser.linkWithCredential(
+    //   googleCredential,
+    // );
+    //  Handle the linked account as needed in your app
+    try { 
+      let loginUser = await auth().signInWithCredential(googleCredential);
+      console.log('Login User', loginUser);
+    } catch (error) {
+      console.log('Error', error);
+    }
+  }
+
   return (
     <SafeAreaView>
       <ScrollView>
@@ -124,7 +154,10 @@ const LoginScreen = () => {
             </TouchableOpacity>
 
             {/* Google login button */}
-            <TouchableOpacity style={styles.googleButtonContainer}>
+            <TouchableOpacity
+              style={styles.googleButtonContainer}
+              onPress={googleSignInHandler}>
+              <Image source={{uri: '../../assets/images/google.png'}} />
               <Text style={styles.googleButtonText}>Continue with Google</Text>
             </TouchableOpacity>
 

@@ -1,0 +1,24 @@
+{
+  "countries": [
+    {"country": "Australia", "country_code": "AU"},
+    {"country": "United Kingdom", "country_code": "GB"},
+    {"country": "South Africa", "country_code": "ZA"},
+    {"country": "Mexico", "country_code": "MX"},
+    {"country": "United States", "country_code": "US"},
+    {"country": "China", "country_code": "CN"},
+    {"country": "India", "country_code": "IN"},
+    {"country": "France", "country_code": "FR"},
+    {"country": "Canada", "country_code": "CA"},
+    {"country": "Germany", "country_code": "DE"},
+    {"country": "Brazil", "country_code": "BR"},
+    {"country": "Japan", "country_code": "JP"},
+    {"country": "Italy", "country_code": "IT"},
+    {"country": "Spain", "country_code": "ES"},
+    {"country": "South Korea", "country_code": "KR"},
+    {"country": "Turkey", "country_code": "TR"},
+    {"country": "Russia", "country_code": "RU"},
+    {"country": "United Arab Emirates", "country_code": "AE"},
+    {"country": "Singapore", "country_code": "SG"},
+    {"country": "Dubai", "country_code": "AE"}
+  ]
+}

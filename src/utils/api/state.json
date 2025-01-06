@@ -1,0 +1,124 @@
+{
+  "states": [
+    {
+      "country": "Australia",
+      "states": [
+        {"state": "Victoria", "country_code": "AU"},
+        {"state": "New South Wales", "country_code": "AU"},
+        {"state": "Queensland", "country_code": "AU"},
+        {"state": "Western Australia", "country_code": "AU"},
+        {"state": "South Australia", "country_code": "AU"},
+        {"state": "Tasmania", "country_code": "AU"},
+        {"state": "Australian Capital Territory", "country_code": "AU"},
+        {"state": "Northern Territory", "country_code": "AU"}
+      ]
+    },
+    {
+      "country": "United Kingdom",
+      "states": [
+        {"state": "England", "country_code": "GB"},
+        {"state": "Scotland", "country_code": "GB"},
+        {"state": "Wales", "country_code": "GB"},
+        {"state": "Northern Ireland", "country_code": "GB"}
+      ]
+    },
+    {
+      "country": "South Africa",
+      "states": [
+        {"state": "Western Cape", "country_code": "ZA"},
+        {"state": "Gauteng", "country_code": "ZA"},
+        {"state": "KwaZulu-Natal", "country_code": "ZA"},
+        {"state": "Eastern Cape", "country_code": "ZA"},
+        {"state": "Limpopo", "country_code": "ZA"},
+        {"state": "Mpumalanga", "country_code": "ZA"},
+        {"state": "Free State", "country_code": "ZA"},
+        {"state": "North West", "country_code": "ZA"},
+        {"state": "Northern Cape", "country_code": "ZA"}
+      ]
+    },
+    {
+      "country": "Mexico",
+      "states": [
+        {"state": "CDMX", "country_code": "MX"},
+        {"state": "Jalisco", "country_code": "MX"},
+        {"state": "Nuevo León", "country_code": "MX"},
+        {"state": "Puebla", "country_code": "MX"},
+        {"state": "Veracruz", "country_code": "MX"},
+        {"state": "Baja California", "country_code": "MX"},
+        {"state": "Chihuahua", "country_code": "MX"},
+        {"state": "Quintana Roo", "country_code": "MX"},
+        {"state": "Guanajuato", "country_code": "MX"}
+      ]
+    },
+    {
+      "country": "United States",
+      "states": [
+        {"state": "California", "country_code": "US"},
+        {"state": "Texas", "country_code": "US"},
+        {"state": "Florida", "country_code": "US"},
+        {"state": "New York", "country_code": "US"},
+        {"state": "Illinois", "country_code": "US"},
+        {"state": "Ohio", "country_code": "US"},
+        {"state": "Pennsylvania", "country_code": "US"},
+        {"state": "Georgia", "country_code": "US"},
+        {"state": "North Carolina", "country_code": "US"}
+      ]
+    },
+    {
+      "country": "India",
+      "states": [
+        {"state": "Uttar Pradesh", "country_code": "IN"},
+        {"state": "Maharashtra", "country_code": "IN"},
+        {"state": "Bengaluru", "country_code": "IN"},
+        {"state": "Delhi", "country_code": "IN"},
+        {"state": "Karnataka", "country_code": "IN"},
+        {"state": "Tamil Nadu", "country_code": "IN"},
+        {"state": "Gujarat", "country_code": "IN"},
+        {"state": "Rajasthan", "country_code": "IN"},
+        {"state": "West Bengal", "country_code": "IN"}
+      ]
+    },
+    {
+      "country": "France",
+      "states": [
+        {"state": "Île-de-France", "country_code": "FR"},
+        {"state": "Provence-Alpes-Côte d'Azur", "country_code": "FR"},
+        {"state": "Occitanie", "country_code": "FR"},
+        {"state": "Nouvelle-Aquitaine", "country_code": "FR"},
+        {"state": "Auvergne-Rhône-Alpes", "country_code": "FR"},
+        {"state": "Hauts-de-France", "country_code": "FR"},
+        {"state": "Grand Est", "country_code": "FR"},
+        {"state": "Brittany", "country_code": "FR"},
+        {"state": "Normandy", "country_code": "FR"}
+      ]
+    },
+    {
+      "country": "Brazil",
+      "states": [
+        {"state": "São Paulo", "country_code": "BR"},
+        {"state": "Rio de Janeiro", "country_code": "BR"},
+        {"state": "Minas Gerais", "country_code": "BR"},
+        {"state": "Bahia", "country_code": "BR"},
+        {"state": "Rio Grande do Sul", "country_code": "BR"},
+        {"state": "Paraná", "country_code": "BR"},
+        {"state": "Pernambuco", "country_code": "BR"},
+        {"state": "Ceará", "country_code": "BR"},
+        {"state": "Santa Catarina", "country_code": "BR"}
+      ]
+    },
+    {
+      "country": "Germany",
+      "states": [
+        {"state": "Bavaria", "country_code": "DE"},
+        {"state": "Berlin", "country_code": "DE"},
+        {"state": "North Rhine-Westphalia", "country_code": "DE"},
+        {"state": "Hesse", "country_code": "DE"},
+        {"state": "Lower Saxony", "country_code": "DE"},
+        {"state": "Saxony", "country_code": "DE"},
+        {"state": "Rhineland-Palatinate", "country_code": "DE"},
+        {"state": "Baden-Württemberg", "country_code": "DE"},
+        {"state": "Brandenburg", "country_code": "DE"}
+      ]
+    }
+  ]
+}

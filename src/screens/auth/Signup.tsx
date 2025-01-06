@@ -11,7 +11,7 @@ import {
 import {Colors, fontSize} from '../../utils';
 import {responsiveHeight} from 'react-native-responsive-dimensions';
 
-const SignupScreen = () => {
+const SignupScreen = ({navigation}: any) => {
   // const [loading, setLoading] = useState<boolean>(false);
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
@@ -55,6 +55,7 @@ const SignupScreen = () => {
   const loginHandler = () => {
     if (validateForm()) {
     }
+    navigation.navigate('allRestuarants');
   };
 
   return (
