@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Image,
   SafeAreaView,
@@ -15,10 +15,6 @@ import {Colors, fontSize} from '../../utils';
 import {responsiveHeight} from 'react-native-responsive-dimensions';
 import {useNavigation} from '@react-navigation/native';
 import {OtpVerificationScreen} from '../../components';
-
- GoogleSignin.configure({
-  webClientId: '341941366942-eso5o839990agfqser44fp92phi3d700.apps.googleusercontent.com'
-})
 
 const LoginScreen = () => {
   const navigation = useNavigation<any>();
@@ -76,28 +72,62 @@ const LoginScreen = () => {
     navigation.navigate('signup');
   };
 
-  const googleSignInHandler = async () =>  {
-    // Ensure the device supports Google Play services
-    // await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
-    // Obtain the user's ID token
-    const {idToken}: any = await GoogleSignin.signIn();
-    console.log('Id Token', idToken);
+  // const googleSignInHandler = async () =>  {
+  //   // Ensure the device supports Google Play services
+  //   // await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
+  //   // Obtain the user's ID token
+  //   const {idToken}: any = await GoogleSignin.signIn();
+  //   console.log('Id Token', idToken);
 
-    // Create a Google credential with the token
-    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+  //   // Create a Google credential with the token
+  //   const googleCredential = auth.GoogleAuthProvider.credential(idToken);
 
-    // Link the user's account with the Google credential
-    // const firebaseUserCredential = await auth().currentUser.linkWithCredential(
-    //   googleCredential,
-    // );
-    //  Handle the linked account as needed in your app
-    try { 
-      let loginUser = await auth().signInWithCredential(googleCredential);
-      console.log('Login User', loginUser);
+  //   // Link the user's account with the Google credential
+  //   // const firebaseUserCredential = await auth().currentUser.linkWithCredential(
+  //   //   googleCredential,
+  //   // );
+  //   //  Handle the linked account as needed in your app
+  //   try { 
+  //     let loginUser = await auth().signInWithCredential(googleCredential);
+  //     console.log('Login User', loginUser);
+  //   } catch (error) {
+  //     console.log('Error', error);
+  //   }
+  // }
+
+  const googleSignInHandler = async () => {
+    try {
+      // Ensure the device has Google Play services available
+      await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
+      
+      // Sign-in and get the ID Token
+      const userInfo = await GoogleSignin.signIn();
+      // console.log('User Info:', userInfo?.data?.idToken);
+  
+      if (userInfo) {
+        // const { idToken }: any = userInfo;
+        console.log('Id Token:', userInfo?.data?.idToken);
+        const idToken: any = userInfo?.data?.idToken;
+  
+        // Use the idToken to sign in with Firebase
+        const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+        const userCredential = await auth().signInWithCredential(googleCredential);
+        console.log('Logged in User:', userCredential);
+      } else {
+        console.log('Google Sign-In failed: No ID Token found');
+      }
     } catch (error) {
-      console.log('Error', error);
+      console.error('Google Sign-In Error:', error);
     }
-  }
+  };
+
+  useEffect(() => {
+    GoogleSignin.configure({
+      webClientId: '341941366942-eso5o839990agfqser44fp92phi3d700.apps.googleusercontent.com',
+      offlineAccess: true,
+    })
+  }, [])
+  
 
   return (
     <SafeAreaView>
